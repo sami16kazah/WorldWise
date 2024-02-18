@@ -1,0 +1,28 @@
+{
+  "cities": [
+    {
+      "id": "0b6e",
+      "cityName": "Almada",
+      "country": "Portugal",
+      "emoji": "🇵🇹",
+      "date": "2024-02-17",
+      "notes": "test",
+      "position": {
+        "lat": "38.6897975322717",
+        "lng": "-9.15736377352744"
+      }
+    },
+    {
+      "id": "43d2",
+      "cityName": "Ma'an",
+      "country": "Jordan",
+      "emoji": "🇯🇴",
+      "date": "2024-02-18",
+      "notes": "test",
+      "position": {
+        "lat": "31.16580958786196",
+        "lng": "36.955046859182794"
+      }
+    }
+  ]
+}

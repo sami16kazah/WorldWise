@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.backgroundImg {
+  position: relative;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.backgroundImg::after {
+  content: '';
+  background: url('/main2.jpg') no-repeat center center;
+  background-size: cover;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  -webkit-filter: grayscale(1); /* Old WebKit */
+  filter: grayscale(1);
+}
+
+@layer components {
+  .epr-body::-webkit-scrollbar {
+    width: 6px !important;
+  }
+  .epr-body::-webkit-scrollbar-track {
+    background: transparent !important;
+  }
+  .epr-body::-webkit-scrollbar-thumb {
+    background: #444e54 !important;
+  }
+  ::-webkit-scrollbar {
+    width: 6px !important;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent !important;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #444e54 !important;
+  }
+  /* custom scrollbar*/
+  .scrollbar::-webkit-scrollbar {
+    width: 5px;
+  }
+  .scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #444e54;
+  }
+}
