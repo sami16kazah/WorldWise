@@ -18,7 +18,7 @@ function CityItem({ city }) {
         <div className="flex items-center justify-center  aspect-square gap-2 w-1/3">
           <button className="rounded-full bg-green-500 border-0"></button>
           <span>{emoji}</span>
-          <h3 className="text-pretty text-md text-ellipsis whitespace-nowrap">
+          <h3 className="text-pretty text-md text-ellipsis whitespace-pre-wrap">
             {cityName}
           </h3>
         </div>
