@@ -9,7 +9,8 @@ import { AuthProiveder } from './Context/AuthContext';
 import ProtectedRoutes from './pages/ProtectedRoutes';
 
 import FullPageSpinner from './components/FullPageSpinner';
-import ProgressBar from './components/ProgressBar';
+
+import Progress from './components/Progress';
 
 const HomePage = lazy(() => import('./pages/HomePage'));
 const Product = lazy(() => import('./pages/Product'));
@@ -27,7 +28,7 @@ function App() {
             <Suspense
               fallback={
                 <>
-                  <ProgressBar></ProgressBar>
+                  <Progress></Progress>
                   <FullPageSpinner></FullPageSpinner>
                 </>
               }
