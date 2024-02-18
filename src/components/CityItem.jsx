@@ -9,16 +9,18 @@ function CityItem({ city }) {
   return (
     <Link to={`${id}?lat=${position.lat}&lng=${position.lng}`}>
       <li
-        className={`flex items-center justify-between  bg-gray-700 mt-2 rounded-lg border-solid  border-2 ${
-          currentCity.id == id ? 'border-green-500' : 'border-transparent'
-        } hover:border-green-500 flex-wrap    `}
+        className={`flex items-center justify-between  bg-gray-700 mt-2 rounded-lg border-solid  ${
+          currentCity.id == id
+            ? 'border-2 border-green-500'
+            : ' border-l-4 border-green-500'
+        } hover:border-2 hover:border-green-500 flex-wrap    `}
       >
-        <div className="flex items-center justify-center  aspect-square gap-2">
-          <button className="rounded-full bg-green-500 border-0">
-            <span className="h-24 bg-green-500 w-1 block"></span>
-          </button>
+        <div className="flex items-center justify-center  aspect-square gap-2 w-1/3">
+          <button className="rounded-full bg-green-500 border-0"></button>
           <span>{emoji}</span>
-          <h3>{cityName}</h3>
+          <h3 className="text-pretty text-md text-ellipsis whitespace-nowrap">
+            {cityName}
+          </h3>
         </div>
         <div className="flex items-center justify-between gap-4">
           <time className=" text-pretty text-xs">({date})</time>

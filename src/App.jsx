@@ -9,6 +9,7 @@ import { AuthProiveder } from './Context/AuthContext';
 import ProtectedRoutes from './pages/ProtectedRoutes';
 
 import FullPageSpinner from './components/FullPageSpinner';
+import ProgressBar from './components/ProgressBar';
 
 const HomePage = lazy(() => import('./pages/HomePage'));
 const Product = lazy(() => import('./pages/Product'));
@@ -23,33 +24,37 @@ function App() {
       <AuthProiveder>
         <CitiesProvider>
           <BrowserRouter>
-            <Suspense fallback={<FullPageSpinner></FullPageSpinner>}>
+            <Suspense
+              fallback={
+                <>
+                  <ProgressBar></ProgressBar>
+                  <FullPageSpinner></FullPageSpinner>
+                </>
+              }
+            >
               <Routes>
-                <Route path="/product" element={<Product></Product>}></Route>
-                <Route path="/" element={<HomePage></HomePage>}></Route>
-                <Route path="/pricing" element={<Pricing></Pricing>}></Route>
-                <Route path="/login" element={<Login></Login>}></Route>
+                <Route path="/product" element={<Product />}></Route>
+                <Route path="/" element={<HomePage />}></Route>
+                <Route path="/pricing" element={<Pricing />}></Route>
+                <Route path="/login" element={<Login />}></Route>
                 <Route
                   path="/worldWise"
                   element={
                     <ProtectedRoutes>
-                      <WorldWise></WorldWise>
+                      <WorldWise />
                     </ProtectedRoutes>
                   }
                 >
                   <Route
                     index
-                    element={<Navigate replace to="cities"></Navigate>}
+                    element={<Navigate replace to="cities" />}
                   ></Route>
-                  <Route path="cities" element={<CityList></CityList>}></Route>
-                  <Route path="cities/:id" element={<City></City>}></Route>
-                  <Route
-                    path="countries"
-                    element={<CountryList></CountryList>}
-                  ></Route>
-                  <Route path="form" element={<Form></Form>}></Route>
+                  <Route path="cities" element={<CityList />}></Route>
+                  <Route path="cities/:id" element={<City />}></Route>
+                  <Route path="countries" element={<CountryList />}></Route>
+                  <Route path="form" element={<Form />}></Route>
                 </Route>
-                <Route path="*" element={<PageNotFound></PageNotFound>}></Route>
+                <Route path="*" element={<PageNotFound />}></Route>
               </Routes>
             </Suspense>
           </BrowserRouter>
